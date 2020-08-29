@@ -28,16 +28,22 @@ class CountryListViewController: UIViewController, UITableViewDataSource {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        fetchCountries()
+    }
+
+    func fetchCountries() {
         HUD.show(in: view.window!)
-        Server.shared.countryList() { (error) in
-            
+
+        Server.shared.countryList() { (result) in
+
             HUD.dismiss(from: self.view.window!)
-            guard error == nil else {
-                assertionFailure("There was an error: \(error!)")
-                return
+            switch result {
+            case .success(let countries):
+                self.countries = countries
+                self.countryTableView.reloadData()
+            case .failure(let error):
+                assertionFailure("There was an error: \(error)")
             }
-            
-            self.countryTableView.reloadData()
         }
     }
     

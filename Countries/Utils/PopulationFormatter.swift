@@ -9,7 +9,7 @@
 import Foundation
 
 struct PopulationFormatter {
-    static func formatPopulation(population: Int,
+    static func formatPopulation(population: Int32,
                                  locale: Locale = Locale.current) -> String {
         let formater = NumberFormatter()
         formater.numberStyle = .decimal

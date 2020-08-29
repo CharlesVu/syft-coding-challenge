@@ -60,7 +60,7 @@ class CountryListViewController: UIViewController, UITableViewDataSource {
         if let country = countries?[indexPath.row] {
             cell.country.text = country.name
             cell.capital.text = country.capital
-            cell.population.text = String(country.population)
+            cell.population.text = PopulationFormatter.formatPopulation(population: country.population)
             
             cell.accessibilityIdentifier = "\(country.name!)-Cell"
             cell.country.accessibilityIdentifier = "Country"

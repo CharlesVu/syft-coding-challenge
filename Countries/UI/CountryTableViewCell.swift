@@ -31,12 +31,10 @@ class CountryTableViewCell: UITableViewCell {
 
 extension CountryTableViewCell: CapitalLabelHideable {
     func hideCapitalLabels() {
-        capital.isHidden = true
-        capitalLabel.isHidden = true
+        capitalStackView.isHidden = true
     }
 
     func showCapitalLabels() {
-        capital.isHidden = false
-        capitalLabel.isHidden = false
+        capitalStackView.isHidden = false
     }
 }

@@ -27,5 +27,16 @@ class CountryTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+}
 
+extension CountryTableViewCell: CapitalLabelHideable {
+    func hideCapitalLabels() {
+        capital.isHidden = true
+        capitalLabel.isHidden = true
+    }
+
+    func showCapitalLabels() {
+        capital.isHidden = false
+        capitalLabel.isHidden = false
+    }
 }

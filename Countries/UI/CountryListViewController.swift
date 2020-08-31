@@ -58,20 +58,44 @@ class CountryListViewController: UIViewController, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CountryTableViewCell") as! CountryTableViewCell
         
         if let country = countries?[indexPath.row] {
-            cell.country.text = country.name
-            cell.capital.text = country.capital
-            cell.population.text = PopulationFormatter.formatPopulation(population: country.population)
-            
-            cell.accessibilityIdentifier = "\(country.name!)-Cell"
-            cell.country.accessibilityIdentifier = "Country"
-            cell.capital.accessibilityIdentifier = "\(country.name!)-Capital"
-            cell.capitalLabel.accessibilityIdentifier = "\(country.name!)-Capital-Label"
-            cell.population.accessibilityIdentifier = "\(country.name!)-Population"
-            cell.populationLabel.accessibilityIdentifier = "\(country.name!)-Population-Label"
-
+            populateCell(cell, withCountry: country)
         }
         return cell
     }
-    
+
+
+    private func populateCell(_ cell: CountryTableViewCell,
+                              withCountry country : Country) {
+        guard let name = country.name else {
+            assertionFailure("Trying to fill a cell without a country Name")
+            return
+        }
+
+        cell.country.text = country.name
+        cell.capital.text = country.capital
+        cell.population.text = PopulationFormatter.formatPopulation(population: country.population)
+
+        Self.fillAccessibilityIdentifiers(cell, countryName: name)
+        Self.layoutCell(cell, capital: country.capital)
+    }
+
+    static func fillAccessibilityIdentifiers(_ cell: CountryTableViewCell,
+                                             countryName : String) {
+        cell.accessibilityIdentifier = "\(countryName)-Cell"
+        cell.country.accessibilityIdentifier = "Country"
+        cell.capital.accessibilityIdentifier = "\(countryName)-Capital"
+        cell.capitalLabel.accessibilityIdentifier = "\(countryName)-Capital-Label"
+        cell.population.accessibilityIdentifier = "\(countryName)-Population"
+        cell.populationLabel.accessibilityIdentifier = "\(countryName)-Population-Label"
+    }
+
+    static func layoutCell(_ cell: CapitalLabelHideable,
+                            capital : String?) {
+        if capital == nil || capital == "" {
+            cell.hideCapitalLabels()
+        } else {
+            cell.showCapitalLabels()
+        }
+    }
 }
 

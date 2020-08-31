@@ -29,6 +29,9 @@
 		2C874CA63841404087A631D6 /* Pods_Countries.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 392AF5C9BC090983F77F3251 /* Pods_Countries.framework */; };
 		563A652924FA857500038BCA /* PopulationFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563A652824FA857500038BCA /* PopulationFormatter.swift */; };
 		563A652B24FA867000038BCA /* PopulationFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563A652A24FA867000038BCA /* PopulationFormatterTests.swift */; };
+		563A653924FD3B8600038BCA /* CapitalLabelHideable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563A653824FD3B8600038BCA /* CapitalLabelHideable.swift */; };
+		563A653B24FD3BEF00038BCA /* CountryListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563A653A24FD3BEF00038BCA /* CountryListViewControllerTests.swift */; };
+		563A653D24FD3C6500038BCA /* MockCountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563A653C24FD3C6500038BCA /* MockCountryCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +81,9 @@
 		392AF5C9BC090983F77F3251 /* Pods_Countries.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Countries.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		563A652824FA857500038BCA /* PopulationFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulationFormatter.swift; sourceTree = "<group>"; };
 		563A652A24FA867000038BCA /* PopulationFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulationFormatterTests.swift; sourceTree = "<group>"; };
+		563A653824FD3B8600038BCA /* CapitalLabelHideable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapitalLabelHideable.swift; sourceTree = "<group>"; };
+		563A653A24FD3BEF00038BCA /* CountryListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListViewControllerTests.swift; sourceTree = "<group>"; };
+		563A653C24FD3C6500038BCA /* MockCountryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCountryCell.swift; sourceTree = "<group>"; };
 		94C5FD14DC385ED3C8B27BE9 /* Pods-Countries.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Countries.release.xcconfig"; path = "Target Support Files/Pods-Countries/Pods-Countries.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,6 +122,7 @@
 				1A5628A4241114F400E004AF /* CountryTableViewCell.swift */,
 				1AF93B09240EB2F400355AE7 /* SecondViewController.swift */,
 				1A5628A72411615F00E004AF /* HUD.swift */,
+				563A653824FD3B8600038BCA /* CapitalLabelHideable.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -193,6 +200,8 @@
 				1AF93B1F240EB2F600355AE7 /* CountriesTests.swift */,
 				1AF93B21240EB2F600355AE7 /* Info.plist */,
 				563A652A24FA867000038BCA /* PopulationFormatterTests.swift */,
+				563A653A24FD3BEF00038BCA /* CountryListViewControllerTests.swift */,
+				563A653C24FD3C6500038BCA /* MockCountryCell.swift */,
 			);
 			path = CountriesTests;
 			sourceTree = "<group>";
@@ -407,6 +416,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AF93B10240EB2F400355AE7 /* Countries.xcdatamodeld in Sources */,
+				563A653924FD3B8600038BCA /* CapitalLabelHideable.swift in Sources */,
 				1AAA0344240FACBC0073441E /* ServerCountryExtension.swift in Sources */,
 				1AF93B0A240EB2F400355AE7 /* SecondViewController.swift in Sources */,
 				1AF93B08240EB2F400355AE7 /* CountryListViewController.swift in Sources */,
@@ -430,6 +440,8 @@
 			files = (
 				563A652B24FA867000038BCA /* PopulationFormatterTests.swift in Sources */,
 				1AF93B20240EB2F600355AE7 /* CountriesTests.swift in Sources */,
+				563A653D24FD3C6500038BCA /* MockCountryCell.swift in Sources */,
+				563A653B24FD3BEF00038BCA /* CountryListViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -97,5 +97,4 @@ class CountriesUITests: XCTestCase {
         let orderedCountries = countries.sorted()
         XCTAssertEqual(countries, orderedCountries)
     }
-    
 }

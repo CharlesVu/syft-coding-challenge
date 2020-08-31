@@ -13,7 +13,13 @@ import CoreData
 class CountryListViewController: UIViewController, UITableViewDataSource {
 
     @IBOutlet weak var countryTableView: UITableView!
-    var countries: [Country]?
+    var countries: [Country]? {
+        didSet {
+            sortCountries()
+        }
+    }
+
+    var sortedCountries: [Country]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +63,7 @@ class CountryListViewController: UIViewController, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CountryTableViewCell") as! CountryTableViewCell
         
-        if let country = countries?[indexPath.row] {
+        if let country = sortedCountries?[indexPath.row] {
             populateCell(cell, withCountry: country)
         }
         return cell
@@ -95,6 +101,12 @@ class CountryListViewController: UIViewController, UITableViewDataSource {
             cell.hideCapitalLabels()
         } else {
             cell.showCapitalLabels()
+        }
+    }
+
+    func sortCountries() {
+        sortedCountries = countries?.sorted { (lhs, rhs) -> Bool in
+            lhs.name ?? "" < rhs.name ?? ""
         }
     }
 }

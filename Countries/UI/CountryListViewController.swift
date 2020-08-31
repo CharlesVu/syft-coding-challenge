@@ -69,7 +69,6 @@ class CountryListViewController: UIViewController, UITableViewDataSource {
         return cell
     }
 
-
     private func populateCell(_ cell: CountryTableViewCell,
                               withCountry country : Country) {
         guard let name = country.name else {
@@ -80,6 +79,7 @@ class CountryListViewController: UIViewController, UITableViewDataSource {
         cell.country.text = country.name
         cell.capital.text = country.capital
         cell.population.text = PopulationFormatter.formatPopulation(population: country.population)
+        cell.area.text = AreaFormatter.formatArea(area: country.area)
 
         Self.fillAccessibilityIdentifiers(cell, countryName: name)
         Self.layoutCell(cell, capital: country.capital)
@@ -93,6 +93,8 @@ class CountryListViewController: UIViewController, UITableViewDataSource {
         cell.capitalLabel.accessibilityIdentifier = "\(countryName)-Capital-Label"
         cell.population.accessibilityIdentifier = "\(countryName)-Population"
         cell.populationLabel.accessibilityIdentifier = "\(countryName)-Population-Label"
+        cell.area.accessibilityIdentifier = "\(countryName)-Area"
+        cell.areaLabel.accessibilityIdentifier = "\(countryName)-Area-Label"
     }
 
     static func layoutCell(_ cell: CapitalLabelHideable,

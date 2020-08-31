@@ -16,7 +16,13 @@ class CountryTableViewCell: UITableViewCell {
     @IBOutlet weak var capitalStackView: UIStackView!
     @IBOutlet weak var population: UILabel!
     @IBOutlet weak var populationLabel: UILabel!
-    
+
+    @IBOutlet weak var area: UILabel!
+    @IBOutlet weak var areaLabel: UILabel!
+
+    @IBOutlet weak var region: UILabel!
+    @IBOutlet weak var regionLabel: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

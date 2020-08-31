@@ -97,4 +97,27 @@ class CountriesUITests: XCTestCase {
         let orderedCountries = countries.sorted()
         XCTAssertEqual(countries, orderedCountries)
     }
+
+    func testArea() {
+        // UI tests must launch the application that they test.
+        let app = XCUIApplication()
+        app.launch()
+
+        let antarcticaArea = app.staticTexts["Antarctica-Area"]
+        XCTAssertTrue(antarcticaArea.waitForExistence(timeout: kTimeOut))
+        XCTAssertTrue(antarcticaArea.label.hasSuffix("km²"), "Areas should be in km²")
+        XCTAssertEqual(antarcticaArea.label.filter({return $0 == ","}).count, 2, "Antartica area should have 2 commas except if something wrong happened since")
+    }
+
+    func testRegion() {
+        // UI tests must launch the application that they test.
+        let app = XCUIApplication()
+        app.launch()
+
+        let franceRegion = app.staticTexts["France-Region"]
+        XCTAssertTrue(franceRegion.waitForExistence(timeout: kTimeOut))
+        XCTAssertEqual(franceRegion.label, "Europe", "France should be labeled as belonging to Europe")
+    }
+
+
 }

@@ -26,7 +26,7 @@ class CountryListViewController: UIViewController, UITableViewDataSource {
         // Do any additional setup after loading the view.
 
         countryTableView.rowHeight = UITableView.automaticDimension
-        countryTableView.estimatedRowHeight = 100
+        countryTableView.estimatedRowHeight = 188
         countryTableView.dataSource = self
         countryTableView.accessibilityIdentifier = "CountryTable"
     }
@@ -80,6 +80,7 @@ class CountryListViewController: UIViewController, UITableViewDataSource {
         cell.capital.text = country.capital
         cell.population.text = PopulationFormatter.formatPopulation(population: country.population)
         cell.area.text = AreaFormatter.formatArea(area: country.area)
+        cell.region.text = country.region
 
         Self.fillAccessibilityIdentifiers(cell, countryName: name)
         Self.layoutCell(cell, capital: country.capital)
@@ -95,6 +96,8 @@ class CountryListViewController: UIViewController, UITableViewDataSource {
         cell.populationLabel.accessibilityIdentifier = "\(countryName)-Population-Label"
         cell.area.accessibilityIdentifier = "\(countryName)-Area"
         cell.areaLabel.accessibilityIdentifier = "\(countryName)-Area-Label"
+        cell.region.accessibilityIdentifier = "\(countryName)-Region"
+        cell.regionLabel.accessibilityIdentifier = "\(countryName)-Region-Label"
     }
 
     static func layoutCell(_ cell: CapitalLabelHideable,
